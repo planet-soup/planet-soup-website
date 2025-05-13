@@ -1,1 +1,27 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #111;
+    color: #0f0;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
 
+.check {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#cssTest {
+    width: 10px;
+    height: 10px;
+    background: red;
+    visibility: hidden;
+    position: absolute;
+}
