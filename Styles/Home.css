@@ -92,3 +92,47 @@ nav a:hover::after {
         padding: 0.5rem 0;
     }
 }
+
+#loading-screen {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #131313; /* or your aesthetic */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    z-index: 9999; /* top layer */
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #111111;
+    border-top-color: #ff1f29;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Freeze animation when paused */
+.spinner.paused {
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#loading-screen {
+    opacity: 1;
+    animation: fadeOut 0.3s ease forwards;
+    transition: opacity 0.5s ease;
+    animation-delay: 2s; /* for example, how long you want it visible */
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
