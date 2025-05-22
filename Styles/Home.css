@@ -1,0 +1,94 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui ;
+    background: #131313;
+    color: #ff1f29;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(145deg, #131313, #262525, #111111);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: #ff1f29;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    font-weight: 700;
+    position: relative;
+    color: #ff1f29;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: #dc0000;
+    width: 0;                      /* Start with zero width */
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* smoother easing */
+}
+
+nav a:hover {
+    color: #dc0000;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    nav a {
+        padding: 0.5rem 0;
+    }
+}
